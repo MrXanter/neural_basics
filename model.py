@@ -1,7 +1,5 @@
 import torch.nn as nn
-import torch
-import torch.optim as optim
-from model_loader import X, y, dataset, loader, N, input_dim, num_classes
+from model_loader import X, input_dim, num_classes
 
 
 class MySimpleModel(nn.Module):
@@ -15,9 +13,3 @@ class MySimpleModel(nn.Module):
 
     def forward(self, x):
         return self.network(x)
-
-
-
-model = MySimpleModel(input_dim, num_classes)
-loss_fn = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)

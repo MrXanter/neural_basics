@@ -14,4 +14,6 @@ num_classes = 2
 X = torch.randn(N, input_dim)
 y = torch.randint(0, num_classes, (N,))
 dataset = TensorDataset(X, y)
-loader = DataLoader(dataset, batch_size=16, shuffle=True)
+loader = DataLoader(dataset, batch_size=16, shuffle=True)   
+train_loader = DataLoader(dataset, batch_size=16, shuffle=True)
+val_loader = DataLoader(dataset, batch_size=16, shuffle=False)
